@@ -1,0 +1,26 @@
+﻿import System;
+import System.Console;
+
+val min = 1;
+val max = 10;
+
+func main() {
+    val rnd = Random();
+    val number = rnd.Next(min, max + 1);
+    while (true) {
+        Write("Guess (\{min} - \{max}): ");
+        // TODO: we don't have access to int.Parse
+        // Also no out params
+        val guess = Convert.ToInt32(ReadLine());
+        if (guess < number) {
+            WriteLine("too small!");
+        }
+        else if (guess > number) {
+            WriteLine("too big!");
+        }
+        else {
+            WriteLine("You guessed it!");
+            goto break;
+        }
+    }
+}
